@@ -1,0 +1,12 @@
+<div id="issuebox">
+  <div id="yourerrants"><p class="headertext">Dina Ärenden</p></div>
+  <div id="nameoferrant"></div>
+  <div id="issueselector">
+    <% for issue in @issues %>
+    <div class="issue">
+      <h2><%= issue.name %></h2>
+    </div>
+    <% end %>
+  </div>
+  <div id="selectedissue"></div>
+</div>
