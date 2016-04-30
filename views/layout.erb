@@ -5,13 +5,20 @@
   <title>Document</title>
   <link rel="stylesheet" href="/css/layout.css" type="text/css"/>
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 </head>
 <body>
   <div id="header">
     <ul id="headeritems">
-      <li><div id="issues"><p class="headertext">Ärenden</p></div></li>
+      <li><div id="headerloga"></div></li>
+      <li><div id="issues"><p class="headertext" id="fmltext">Ärenden</p></div></li>
       <li><div id="knowledge_base"><p class="headertext">Vanliga Problem</p></div></li>
-      <li><div id="loginstatus"><p class="headertext">Du är inloggad!</p></div></li>
+      <li><form action="/logout">
+        <button type="submit" id="loggautknapp"><p id="loggaut_text">Logga Ut</p></button></li>
+      </form>
+      <li><div id="loginstatus"><p class="headertext">Välkommen <%= @user.first_name %>! </p></div></li>
     </ul>
   </div>
   <%= yield %>

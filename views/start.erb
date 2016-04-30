@@ -1,5 +1,19 @@
-<% for user in @users %>
-  <div>
-    <h2><%= user.first_name%></h2>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/layout.css" type="text/css"/>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="start_page_loga"></div>
+    <div><p id="name_text">Ärendehantering</p></div>
+    <a href="/login-page"><div id="loggain"><p id="loggain_text">Logga In</p></div></a>
+    <div id="vanligaproblem"><p id="vanligaproblem_text">Vanliga Problem</p></div>
   </div>
-<% end %>
+</body>

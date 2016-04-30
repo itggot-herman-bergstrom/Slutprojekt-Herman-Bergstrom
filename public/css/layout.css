@@ -10,11 +10,11 @@ body{
 #header {
     margin-left: auto;
     margin-right: auto;
-    height: 130px;
+    height: 65px;
     width: 100%;
-    -webkit-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 2px 7px 24px 0px rgba(0,0,0,0.64);
+    -moz-box-shadow: 2px 7px 24px 0px rgba(0,0,0,0.64);
+    box-shadow: 2px 7px 24px 0px rgba(0,0,0,0.64);
     background-color: #3F51B5;
 }
 
@@ -25,10 +25,21 @@ body{
 
 }
 
+#headerloga {
+    float: left;
+    height: 65px;
+    width: 65px;
+    background-image: url("/img/images/ITG_statement_vit_frame.svg");
+}
+
 #issues {
     float: left;
-    height: 130px;
-    width: 33.3%;
+    height: 65px;
+    width: 130px;
+}
+
+#fmltext {
+    margin-top: 20px;
 }
 
 #issues:hover {
@@ -37,8 +48,8 @@ body{
 
 #knowledge_base {
     float: left;
-    height: 130px;
-    width: 33.3%;
+    height: 65px;
+    width: 130px;
 }
 
 #knowledge_base:hover {
@@ -46,9 +57,9 @@ body{
 }
 
 #loginstatus {
-    float: left;
-    height: 130px;
-    width: 33.3%;
+    float: right;
+    height: 65px;
+    width: 130px;
 }
 
 #loginstatus:hover {
@@ -56,9 +67,9 @@ body{
 }
 
 .headertext {
+    margin-top: 7px;
     text-align: center;
-    font-size: 40px;
-    margin-top: 50px;
+    font-size: 20px;
     font-family: 'Roboto', sans-serif;
     color: #FFFFFF;
 }
@@ -67,50 +78,246 @@ body{
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    height: 800px;
-    width: 1600px;
-    -webkit-box-shadow: 13px 10px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 10px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 13px 10px 5px 0px rgba(0,0,0,0.75);
+    height: 530px;
+    width: 1070px;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
     background-color: white;
 }
 
 #issueselector {
     float: left;
-    height: 650px;
-    width: 396px;
+    height: 436px;
+    width: 265px;
     overflow-y: scroll;
     border-right: solid;
-    border-right-width: 4px;
+    border-right-width: 1px;
+    border-right-color: #424242;
     background-color: white;
 }
 
 #selectedissue {
     float: left;
-    height: 650px;
-    width: 1200px;
+    height: 436px;
+    width: 804px;
     overflow-y: scroll;
     background-color: white;
 }
 
 #yourerrants {
     float: left;
-    height: 150px;
-    width: 396px;
+    height: 100px;
+    width: 265px;
     border-right: solid;
-    border-right-width: 4px;
+    border-right-width: 1px;
+    border-right-color: #424242;
     background-color: #4CAF50;
 }
 
-#issue {
+#yourerrantstext {
+    margin-top: 26px;
+    text-align: center;
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+}
+
+.issue {
     float: left;
-    height: 120px;
-    width: 396px;
+    line-height: 80px;
+    height: 80px;
+    width: 265px;
+}
+
+.issue:hover {
+    background-color: #B6B6B6;
+}
+
+#issuetext {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
 }
 
 #nameoferrant {
     float: left;
-    height: 150px;
-    width: 1200px;
+    height: 100px;
+    width: 804px;
     background-color: #4CAF50;
+}
+
+#container {
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: 530px;
+    background-color: #3F51B5;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    padding-top: 50px;
+}
+
+#start_page_loga {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    height: 185px;
+    width: 185px;
+    background-repeat: no-repeat;
+    background-image: url("/img/images/ITG_statement_vit_frame.svg");
+}
+
+#name_text {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+}
+
+#loggain {
+    float: left;
+    height: 140px;
+    width: 200px;
+    background-color: #4CAF50;
+    margin-top: 40px;
+    margin-left: 150px;
+    margin-right: 50px;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+}
+
+#vanligaproblem {
+    float: left;
+    height: 140px;
+    width: 200px;
+    background-color: #4CAF50;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 150px;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+}
+
+#loggain_text {
+    text-align: center;
+    font-size: 26px;
+    line-height: 140px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+}
+
+#vanligaproblem_text {
+    text-align: center;
+    font-size: 24px;
+    line-height: 140px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+}
+
+#loggain:hover {
+    background-color: #3e8e41;
+    -webkit-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.75);
+}
+
+#vanligaproblem:hover{
+    background-color: #3e8e41;
+    -webkit-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.75);
+}
+
+#loggainknapp {
+    float: left;
+    height: 140px;
+    width: 200px;
+    background-color: #4CAF50;
+    margin-top: 40px;
+    margin-left: 150px;
+    margin-right: 50px;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+}
+
+#loggainknapp:hover {
+    background-color: #3e8e41;
+    -webkit-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.75);
+}
+
+#avbrytknapp {
+    float: left;
+    height: 140px;
+    width: 200px;
+    background-color: #4CAF50;
+    margin-top: 40px;
+    margin-right: 50px;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+}
+
+#avbrytknapp:hover{
+    background-color: #3e8e41;
+    -webkit-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.75);
+}
+
+#usernameinput {
+    float: left;
+    height: 20px;
+    width: 180px;
+    margin-top: 60px;
+    color: #FFFFFF;
+}
+
+#passwordinput {
+    float: left;
+    height: 20px;
+    width: 180px;
+    margin-top: 10px;
+    color: #FFFFFF;
+}
+
+#loginrutor {
+    float: left;
+    width: 100px;
+    height: 80px;
+    margin-left: 50px;
+}
+
+#loggautknapp {
+    float: right;
+    height: 65px;
+    width: 140px;
+    background-color: #4CAF50;
+    margin-left: 10px;
+    margin-right: 10px;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+}
+
+#loggaut_text {
+    text-align: center;
+    font-size: 20px;
+    line-height: 65px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+}
+
+#loggautknapp:hover {
+    background-color: #3e8e41;
 }

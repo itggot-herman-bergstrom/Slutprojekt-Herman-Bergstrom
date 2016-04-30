@@ -5,6 +5,7 @@ class User
   property :first_name, String, required: true
   property :last_name, String, required: true
   property :mail, String, required: true
+  property :password, BCryptHash, required: true
 
   belongs_to :role
   has n, :messages
