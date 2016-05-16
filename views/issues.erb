@@ -46,11 +46,41 @@
 <%end%>
   <% if @user.role.id == 2%>
       <div id="yourerrants"><p id="yourerrantstext">Ärenden</p></div>
-      <div id="nameoferrant"></div>
+      <div id="nameoferrant">
+        <p class="errant-list-name">Dina Ärenden</p>
+        <p class="errant-list-name">Avklarade Ärenden</p>
+        <p class="errant-list-name">Öppna Ärenden</p>
+      </div>
       <div id="the-issues">
-        <div class="button issue-sorter" ><p class="button-text issue-sorter-text">Active</p></div>
-        <div class="button issue-sorter" ><p class="button-text issue-sorter-text">Closed</p></div>
-        <div class="button issue-sorter" ><p class="button-text issue-sorter-text">Unaddressed</p></div>
+        <div class="button issue-sorter" id="activeerrants" ><p class="button-text issue-sorter-text">Active</p></div>
+        <div class="button issue-sorter" id="closederrants"><p class="button-text issue-sorter-text">Closed</p></div>
+        <div class="button issue-sorter" id="unaddressederrants"><p class="button-text issue-sorter-text">Unaddressed</p></div>
+        <div id="kategori-admins">
+          <p class="create-issue-text">Kategori:</p>
+          <select name="category" id="kategori-picker-admin">
+            <option value="alla">Alla</option>
+            <% for category in @categories %>
+                <option value="<%= category.id %>"><%= category.name %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+      <div id="issue-info"></div>
+      <div class="errant-list">
+       <% for issue in @allissues.select{|x| x.status.id == 1} %>
+        <div class="errant-list-item">
+          <p class="errant-list-item-text" id="errant-list-item-name"><%= issue.name %></p>
+          <p class="errant-list-item-text" id="errant-list-item-category"><%= issue.category.name%></p>
+          <p class="errant-list-item-text" id="errant-list-item-user"><%= issue.users[0].first_name %> <%= issue.users[0].last_name%></p>
+          <p class="errant-list-item-text" id="errant-list-item-date"><%= issue.date %></p>
+        </div>
+        <% end %>
+      </div>
+      <div class="errant-list">
+      tjenare
+      </div>
+      <div class="errant-list">
+        tjosan
       </div>
 <% end %>
 </div>

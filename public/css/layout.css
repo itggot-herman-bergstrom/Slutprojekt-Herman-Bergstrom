@@ -578,3 +578,70 @@ body{
 .issue-sorter-text {
     line-height: 100px;
 }
+
+#kategori-admins {
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#kategori-picker-admin {
+    margin-left: 10px;
+    height: 25px;
+    width: 120px;
+}
+
+.errant-list {
+    float: left;
+    height: 396px;
+    width: 804px;
+    overflow-y: scroll;
+}
+
+.errant-list-name {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+}
+
+#issue-info {
+    float: left;
+    height: 39px;
+    width: 804px;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #424242;
+}
+
+.errant-list-item {
+    float: left;
+    width: 787px;
+    height: 30px;
+}
+
+.errant-list-item-text {
+    float: left;
+    margin-left: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    height: 30px;
+
+}
+
+#errant-list-item-name {
+    width: 140px;
+}
+
+#errant-list-item-category {
+    width: 100px;
+}
+
+#errant-list-item-user {
+    width: 150px;
+}

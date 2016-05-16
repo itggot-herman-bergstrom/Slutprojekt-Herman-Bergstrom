@@ -35,6 +35,8 @@ class App < Sinatra::Base
 
   get '/issues' do
     @issues = @user.issues
+    @allissues = Issue.all
+    @categories = Category.all
     erb :issues
   end
 
