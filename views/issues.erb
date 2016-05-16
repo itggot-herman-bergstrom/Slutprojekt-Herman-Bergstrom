@@ -1,12 +1,56 @@
+<head>
+  <script>
+    $(document).ready(function(){
+      $(".issue").fadeIn();
+    });
+</script>
+</head>
 <div id="issuebox">
+  <% if @user.role.id == 1 %>
   <div id="yourerrants"><p id="yourerrantstext">Dina Ärenden</p></div>
-  <div id="nameoferrant"></div>
-  <div id="issueselector">
-    <% for issue in @issues %>
-    <div class="issue">
-      <p id="issuetext"><%= issue.name %></p>
-    </div>
+  <div id="nameoferrant">
+    <% for issue in @issues%>
+        <p class="errant-name-text" data-target="<%= issue.id %>"><%= issue.name %></p>
     <% end %>
   </div>
-  <div id="selectedissue"></div>
+  <div id="the-issues">
+  <div id="issueselector">
+    <p class="status-text">Active()</p>
+    <% for issue in @issues.select{|x| x.status.id == 1} %>
+      <div class="issue" data-target="<%= issue.id - 1 %>">
+        <p id="issuetext"><%= issue.name %></p>
+      </div>
+    <% end %>
+    <p class="status-text">Closed</p>
+    <% for issue in @issues.select{|x| x.status.id == 2} %>
+        <div class="issue" data-target="<%= issue.id - 1%>">
+          <p id="issuetext"><%= issue.name %></p>
+        </div>
+    <% end %>
+    <p class="status-text">Unaddressed</p>
+    <% for issue in @issues.select{|x| x.status.id == 3} %>
+        <div class="issue" data-target="<%= issue.id - 1%>">
+          <p id="issuetext"><%= issue.name %></p>
+        </div>
+    <% end %>
+  </div>
+    <a href="/new-issue"><div id="new-issue"><p id="new-issue-text">Nytt Ärende!</p></div></a>
+  </div>
+  <% for issue in @issues %>
+    <div class="slides">
+      <p class="description"><%= issue.description%></p>
+      <p></p>
+      <div id="new-message"><p id="new-message-text">Nytt Meddelande!</p></div>
+    </div>
+  <%end%>
+<%end%>
+  <% if @user.role.id == 2%>
+      <div id="yourerrants"><p id="yourerrantstext">Ärenden</p></div>
+      <div id="nameoferrant"></div>
+      <div id="the-issues">
+        <div class="button issue-sorter" ><p class="button-text issue-sorter-text">Active</p></div>
+        <div class="button issue-sorter" ><p class="button-text issue-sorter-text">Closed</p></div>
+        <div class="button issue-sorter" ><p class="button-text issue-sorter-text">Unaddressed</p></div>
+      </div>
+<% end %>
 </div>

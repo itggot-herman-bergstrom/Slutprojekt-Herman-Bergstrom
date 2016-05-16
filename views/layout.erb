@@ -8,17 +8,26 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+  <script src="/js/jquery-2.2.3.min.js"></script>
+  <script src="/js/main.js"></script>
 </head>
 <body>
   <div id="header">
     <ul id="headeritems">
       <li><div id="headerloga"></div></li>
-      <li><div id="issues"><p class="headertext" id="fmltext">Ärenden</p></div></li>
-      <li><div id="knowledge_base"><p class="headertext">Vanliga Problem</p></div></li>
+      <li><a href="/issues"><div id="issues"><p class="headertext" id="fmltext">Ärenden</p></div></a></li>
+      <li><a href="/common-problems"><div id="knowledge_base"><p class="headertext">Vanliga Problem</p></div></a></li>
+      <% if @user%>
       <li><form action="/logout">
         <button type="submit" id="loggautknapp"><p id="loggaut_text">Logga Ut</p></button></li>
       </form>
       <li><div id="loginstatus"><p class="headertext">Välkommen <%= @user.first_name %>! </p></div></li>
+          <%else%>
+          <li><form action="/login-page">
+            <button type="submit" id="loggautknapp"><p id="loggaut_text">Logga In</p></button></li>
+          </form>
+      <li><div id="loginstatus"><p class="headertext">Du är ej inloggad</p></div></li>
+      <%end%>
     </ul>
   </div>
   <%= yield %>

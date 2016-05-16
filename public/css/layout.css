@@ -62,10 +62,6 @@ body{
     width: 130px;
 }
 
-#loginstatus:hover {
-    background-color: #303F9F;
-}
-
 .headertext {
     margin-top: 7px;
     text-align: center;
@@ -78,7 +74,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    height: 530px;
+    height: 536px;
     width: 1070px;
     -webkit-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
     -moz-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
@@ -86,23 +82,38 @@ body{
     background-color: white;
 }
 
-#issueselector {
+#the-issues{
     float: left;
     height: 436px;
     width: 265px;
-    overflow-y: scroll;
     border-right: solid;
     border-right-width: 1px;
     border-right-color: #424242;
+}
+
+#issueselector {
+    float: left;
+    height: 351px;
+    width: 265px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
     background-color: white;
 }
 
-#selectedissue {
+.slides {
     float: left;
     height: 436px;
     width: 804px;
     overflow-y: scroll;
     background-color: white;
+}
+
+.description {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    margin-top: 10px;
 }
 
 #yourerrants {
@@ -112,11 +123,11 @@ body{
     border-right: solid;
     border-right-width: 1px;
     border-right-color: #424242;
-    background-color: #4CAF50;
+    background-color: #3F51B5;
 }
 
 #yourerrantstext {
-    margin-top: 26px;
+    margin-top: 35px;
     text-align: center;
     font-size: 26px;
     font-family: 'Roboto', sans-serif;
@@ -146,10 +157,10 @@ body{
     float: left;
     height: 100px;
     width: 804px;
-    background-color: #4CAF50;
+    background-color: #3F51B5;
 }
 
-#container {
+.container {
     margin-top: 32px;
     margin-left: auto;
     margin-right: auto;
@@ -160,6 +171,7 @@ body{
     -moz-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
     box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
     padding-top: 50px;
+    overflow-y: inherit;
 }
 
 #start_page_loga {
@@ -320,4 +332,249 @@ body{
 
 #loggautknapp:hover {
     background-color: #3e8e41;
+}
+
+#problem_titel {
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: -15px;
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#problem {
+    height: 1000px;
+    list-style-type: none;
+}
+
+.problem_container {
+    float: left;
+    margin-left: 100px;
+    margin-right: 0px;
+    height: 60px;
+    width: 600px;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #424242;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+
+}
+
+.problem_container:hover {
+    background-color: #B6B6B6;
+}
+
+#problemtext {
+    color: #000000;
+    text-align: start;
+    font-size: 30px;
+    margin: 5px;
+}
+
+.beskrivning {
+    margin: 5px;
+    color: #727272;
+    font-family: 'Roboto', sans-serif;
+}
+
+#beskrivnings-ruta {
+    resize: none;
+    height: 200px;
+}
+
+#edit {
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 35px;
+    width: 35px;
+    background-image: url("/img/images/trashcan.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.slides:first-of-type {
+    display: block !important;
+}
+
+.slides:not(:first-child) {
+    display: none;
+}
+
+.errant-name-text{
+    display: none;
+    text-align: center;
+    margin-top: 35px;
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+}
+
+#new-issue {
+    float: left;
+    width: 265px;
+    height: 85px;
+    background-color: #4CAF50;
+}
+
+#new-issue-text {
+    text-align: center;
+    font-size: 25px;
+    line-height: 85px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+}
+
+#new-issue:hover {
+    background-color: #3e8e41;
+}
+
+#new-message {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 265px;
+    height: 85px;
+    background-color: #4CAF50;
+}
+
+#new-message-text {
+    text-align: center;
+    font-size: 25px;
+    line-height: 85px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+}
+
+#new-message:hover {
+    background-color: #3e8e41;
+}
+
+#new-issue-box {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    height: 536px;
+    width: 1070px;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    background-color: white;
+}
+
+#headerthingy {
+    height: 100px;
+    width: 1070px;
+    background-color: #3F51B5;
+}
+
+#headerthingy-text {
+    text-align: center;
+    line-height: 100px;
+    font-size: 26px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+}
+
+#subject {
+    float: left;
+    width: 300px;
+    height: 30px;
+    margin: 50px;
+}
+
+.create-issue-text{
+    float: left;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+#subject-input {
+    float: left;
+    margin-left: 10px;
+    width: 200px;
+    height: 20px;
+}
+
+#kategori {
+    float: left;
+    margin: 50px;
+}
+
+#kategori-picker {
+    margin-left: 10px;
+    height: 25px;
+    width: 120px;
+}
+
+#beskrivnings-container {
+    width: 500px;
+}
+
+#beskrivnings-ruta {
+    float: left;
+    width: 500px;
+}
+
+#description-div {
+    /*TODO: Fix relational positioning*/
+    width: 500px;
+    overflow: hidden;
+    margin-left: 50px;
+}
+
+.status-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+}
+
+.button {
+    float: left;
+    height: 140px;
+    width: 200px;
+    background-color: #4CAF50;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+    box-shadow: 8px 8px 24px 0px rgba(0,0,0,0.64);
+}
+
+.button:hover {
+    background-color: #3e8e41;
+    -webkit-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.75);
+}
+
+.issue-sorter {
+    height: 100px;
+    width: 265px;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #424242;
+    -webkit-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0);
+    -moz-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0);
+    box-shadow: 11px 11px 5px 0px rgba(0,0,0,0);
+}
+
+.issue-sorter:hover {
+    -webkit-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0);
+    -moz-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0);
+    box-shadow: 11px 11px 5px 0px rgba(0,0,0,0);
+}
+
+.button-text {
+    text-align: center;
+    font-size: 26px;
+    line-height: 140px;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+}
+
+.issue-sorter-text {
+    line-height: 100px;
 }

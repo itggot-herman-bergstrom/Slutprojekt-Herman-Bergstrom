@@ -34,9 +34,36 @@ class App < Sinatra::Base
   end
 
   get '/issues' do
-    @issues = Issue.all
+    @issues = @user.issues
     erb :issues
   end
 
+  get '/common-problems' do
+    @user = User.first(id:session[:user_id])
+    @problems = KnowledgeBaseArticle.all
+    erb :common_problems
+  end
+
+  get '/new-issue' do
+    @user = User.first(id:session[:user_id])
+    @categories = Category.all
+    puts @categories
+    erb :new_issue
+  end
+
+  post '/create-new-issue' do
+    issue = Issue.create(name: params["subject"],
+                  description: params["description"],
+                  category_id: params["category"],
+                  status_id: 3)
+
+    issue
+
+    UserIssue.create(user_id: session[:user_id],
+                     issue_id: issue.id)
+
+    redirect '/issues'
+
+  end
 
 end

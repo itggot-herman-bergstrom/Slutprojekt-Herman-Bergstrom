@@ -6,5 +6,5 @@ class Attachment
 
   belongs_to :message
   belongs_to :issue
-  has 1,   :knowledge_base_article
+  belongs_to :knowledge_base_article
 end

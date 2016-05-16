@@ -7,6 +7,7 @@ class Issue
   property :date, DateTime
 
   belongs_to :category
+  belongs_to :status
   has n, :user_issues
   has n, :users, :through => :user_issues
   has n, :attachments

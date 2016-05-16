@@ -1,0 +1,25 @@
+<div id="new-issue-box">
+  <div id="headerthingy"><p id="headerthingy-text">Nytt Ärende!</p></div>
+  <form action="/create-new-issue" method="post">
+    <div id="subject">
+      <p class="create-issue-text">Ämne:</p>
+      <input type="text" name="subject" id="subject-input" placeholder="Ämne" class="mdl-textfield__input">
+    </div>
+    <div id="kategori">
+      <p class="create-issue-text">Kategori:</p>
+      <select name="category" id="kategori-picker">
+        <% for category in @categories %>
+          <option value="<%= category.id %>"><%= category.name %></option>
+        <% end %>
+      </select>
+    </div>
+    <div id="description-div">
+        <p class="create-issue-text">Beskrivning:</p>
+      <div class="mdl-textfield mdl-js-textfield" id="beskrivnings-container">
+        <textarea name="description" class="mdl-textfield__input" type="text" rows= "3" id="beskrivnings-ruta" ></textarea>
+        <label class="mdl-textfield__label" for="sample5">Beskrivning...</label>
+      </div>
+    </div>
+    <button type="submit" class="button"></button>
+  </form>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+  <h1 id="problem_titel">VANLIGA PROBLEM</h1>
+  <ul id="problem">
+    <% for problems in @problems %>
+      <li>
+        <div class="problem_container">
+          <p class="headertext" id="problemtext"> <%= problems.title%></p>
+          <p class="beskrivning">Förslag på lösningar</p>
+        </div>
+        <% if @user%>
+        <% if @user.role.id == 2 %>
+        <div id="edit"></div>
+        <%end %>
+        <%end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
