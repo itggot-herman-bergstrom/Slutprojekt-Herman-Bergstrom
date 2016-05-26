@@ -1,11 +1,25 @@
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".kryss").click(function(){
+        var n = $(this).attr("data-target");
+        $("#message-box-" + n).hide();
+      });
+      $(".new-message").click(function(){
+        var n = $(this).attr("data-target");
+        console.debug($("#message-box" + n))
+        $("#message-box-" + n).show();
+      });
+    });
+  </script>
   <script>
     $(document).ready(function(){
       $(".issue").fadeIn();
     });
 </script>
 </head>
-<div id="issuebox">
+<div class="issue-container">
   <% if @user.role.id == 1 %>
   <div id="yourerrants"><p id="yourerrantstext">Dina Ärenden</p></div>
   <div id="nameoferrant">
@@ -38,9 +52,30 @@
   </div>
   <% for issue in @issues %>
     <div class="slides">
-      <p class="description"><%= issue.description%></p>
-      <p></p>
-      <div id="new-message"><p id="new-message-text">Nytt Meddelande!</p></div>
+      <div class="beskrivnings-div">
+        <p class="description"><%= issue.description%></p>
+        <% for attachment in @issueattachments.select{|x| x.issue.id == issue.id}%>
+        <img src="/uploads/<%= attachment.path %>" alt="">
+        <% end %>
+      </div>
+      <% for message in @messages.select{|x| x.issue.id == issue.id}%>
+      <div class="meddelande-div"><p class="meddelande-text" ><%= message.message %></p></div>
+      <% end %>
+      <div class="new-message" data-target="<%= issue.id %>" ><p id="new-message-text">Nytt Meddelande!</p></div>
+      <div id="message-box-<%= issue.id %>" class="message-box">
+        <div id="message-box-header">
+          <p id="message-box-header-text">New Message</p>
+          <div class="kryss" data-target="<%= issue.id %>"></div>
+        </div>
+        <form action="/send-message" method="post">
+        <textarea name="message" id="meddelande-ruta" cols="30" rows="10"></textarea>
+        <div id="message-box-footer">
+          <button type="submit" id="send-message"><p id="send-message-text">Skicka</p></button>
+          <div id="attachment-icon"></div>
+        </div>
+          <textarea name="id" id="fuling" cols="30" rows="10"><%= issue.id %></textarea>
+        </form>
+      </div>
     </div>
   <%end%>
 <%end%>
@@ -52,9 +87,9 @@
         <p class="errant-list-name">Öppna Ärenden</p>
       </div>
       <div id="the-issues">
-        <div class="button issue-sorter" id="activeerrants" ><p class="button-text issue-sorter-text">Active</p></div>
-        <div class="button issue-sorter" id="closederrants"><p class="button-text issue-sorter-text">Closed</p></div>
-        <div class="button issue-sorter" id="unaddressederrants"><p class="button-text issue-sorter-text">Unaddressed</p></div>
+        <div class="button issue-sorter" id="activeerrants" ><p class="button-text issue-sorter-text">Dina Ärenden</p></div>
+        <div class="button issue-sorter" id="closederrants"><p class="button-text issue-sorter-text">Avklarade</p></div>
+        <div class="button issue-sorter" id="unaddressederrants"><p class="button-text issue-sorter-text">Öppna Ärenden</p></div>
         <div id="kategori-admins">
           <p class="create-issue-text">Kategori:</p>
           <select name="category" id="kategori-picker-admin">
@@ -65,22 +100,47 @@
           </select>
         </div>
       </div>
-      <div id="issue-info"></div>
+      <div id="issue-info">
+        <p class="issue-info-text" id="issue-info-text-subject">Ämne:</p>
+        <p class="issue-info-text" id="issue-info-text-category">Kategori:</p>
+        <p class="issue-info-text" id="issue-info-text-user">Användare:</p>
+        <p class="issue-info-text" id="issue-info-text-created">Skapad:</p>
+      </div>
       <div class="errant-list">
        <% for issue in @allissues.select{|x| x.status.id == 1} %>
-        <div class="errant-list-item">
+            <% if issue.users.include? @user %>
+            <a href="/issue/<%= issue.id %>"><div class="errant-list-item">
           <p class="errant-list-item-text" id="errant-list-item-name"><%= issue.name %></p>
           <p class="errant-list-item-text" id="errant-list-item-category"><%= issue.category.name%></p>
           <p class="errant-list-item-text" id="errant-list-item-user"><%= issue.users[0].first_name %> <%= issue.users[0].last_name%></p>
-          <p class="errant-list-item-text" id="errant-list-item-date"><%= issue.date %></p>
-        </div>
+          <p class="errant-list-item-text" id="errant-list-item-date"><%= issue.date%></p>
+        </div></a>
+            <% end %>
         <% end %>
       </div>
       <div class="errant-list">
-      tjenare
+        <% for issue in @allissues.select{|x| x.status.id == 2} %>
+            <% if issue.users.include? @user %>
+            <a href="/issue/<%= issue.id %>">
+              <div class="errant-list-item">
+                <p class="errant-list-item-text" id="errant-list-item-name"><%= issue.name %></p>
+                <p class="errant-list-item-text" id="errant-list-item-category"><%= issue.category.name%></p>
+                <p class="errant-list-item-text" id="errant-list-item-user"><%= issue.users[0].first_name %> <%= issue.users[0].last_name%></p>
+                <p class="errant-list-item-text" id="errant-list-item-date"><%= issue.date%></p>
+              </div>
+            </a>
+            <%  end %>
+        <% end %>
       </div>
       <div class="errant-list">
-        tjosan
+        <% for issue in @allissues.select{|x| x.status.id == 3} %>
+            <a href="/issue/<%= issue.id %>"><div class="errant-list-item">
+              <p class="errant-list-item-text" id="errant-list-item-name"><%= issue.name %></p>
+              <p class="errant-list-item-text" id="errant-list-item-category"><%= issue.category.name%></p>
+              <p class="errant-list-item-text" id="errant-list-item-user"><%= issue.users[0].first_name %> <%= issue.users[0].last_name%></p>
+              <p class="errant-list-item-text" id="errant-list-item-date"><%= issue.date%></p>
+            </div></a>
+        <% end %>
       </div>
 <% end %>
 </div>

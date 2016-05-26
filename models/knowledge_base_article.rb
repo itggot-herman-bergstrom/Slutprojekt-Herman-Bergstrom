@@ -8,5 +8,5 @@ class KnowledgeBaseArticle
 
   belongs_to :category
   belongs_to :user
-  has n, :attachments
+  has n, :knowledge_base_article_attachments
 end

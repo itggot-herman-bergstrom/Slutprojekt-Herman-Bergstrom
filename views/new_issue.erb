@@ -1,6 +1,6 @@
 <div id="new-issue-box">
   <div id="headerthingy"><p id="headerthingy-text">Nytt Ärende!</p></div>
-  <form action="/create-new-issue" method="post">
+  <form action="/create-new-issue" method="post" enctype="multipart/form-data">
     <div id="subject">
       <p class="create-issue-text">Ämne:</p>
       <input type="text" name="subject" id="subject-input" placeholder="Ämne" class="mdl-textfield__input">
@@ -19,7 +19,8 @@
         <textarea name="description" class="mdl-textfield__input" type="text" rows= "3" id="beskrivnings-ruta" ></textarea>
         <label class="mdl-textfield__label" for="sample5">Beskrivning...</label>
       </div>
+      <button type="submit" class="button"></button>
     </div>
-    <button type="submit" class="button"></button>
+    <div class="group"><input type="file" name="attachments[]" multiple></div>
   </form>
 </div>

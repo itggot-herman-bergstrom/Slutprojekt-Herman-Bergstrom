@@ -1,0 +1,59 @@
+<div class="issue-container">
+  <div id="issue-container-header">
+    <p class="errant-name-text" id="issue-name-displayed" ><%= @issue.name %></p>
+  </div>
+  <div id="info-ruta">
+    <div id="users">
+      <p id="users-text">Användare:</p>
+      <% for user in @users%>
+        <p id="user-text"><%= user.first_name%> <%= user.last_name%></p>
+      <% end %>
+    </div>
+    <% if @issue.status.id == 3%>
+        <form action="/assign/<%= @issue.id %>" method="post">
+      <button type="submit" class="modify-status"><p id="assign-issue-text">Anta Ärende</p></button>
+        </form>
+    <% end %>
+    <% if @issue.status.id == 1%>
+        <form action="/close/<%= @issue.id %>" method="post">
+          <button type="submit" class="modify-status"><p id="assign-issue-text">Markera Som Avklarat</p></button>
+        </form>
+    <% end %>
+  </div>
+  <div id="dialog-ruta">
+    <div class="beskrivnings-div"><p class="description"><%= @issue.description%></p></div>
+    <% for message in @messages.select{|x| x.issue.id == @issue.id}%>
+        <div class="meddelande-div"><p class="meddelande-text" ><%= message.message %></p></div>
+    <% end %>
+    <% if @issue.status.id == 1%>
+      <div class="new-message"><p id="new-message-text">Nytt Meddelande!</p></div>
+      <div id="message-box">
+        <div id="message-box-header">
+          <p id="message-box-header-text">New Message</p>
+          <div class="kryss" data-target="<%= @issue.id %>"></div>
+        </div>
+        <% if @user.role.id == 2%>
+          <form action="/send-message/<%= @issue.id %>" method="post">
+        <% else %>
+          <form action="/send-message" method="post">
+        <% end %>
+          <textarea name="message" id="meddelande-ruta" cols="30" rows="10"></textarea>
+          <div id="message-box-footer">
+            <button type="submit" id="send-message"><p id="send-message-text">Skicka</p></button>
+            <div id="attachment-icon"></div>
+          </div>
+          <textarea name="id" id="fuling" cols="30" rows="10"><%= @issue.id %></textarea>
+        </form>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+<script>
+  $(".kryss").click(function(){
+    $("#message-box").hide();
+  });
+  $(".new-message").click(function(){
+    $("#message-box").show();
+  });
+</script>

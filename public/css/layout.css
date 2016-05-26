@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 body{
@@ -70,7 +71,7 @@ body{
     color: #FFFFFF;
 }
 
-#issuebox {
+.issue-container {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
@@ -103,10 +104,25 @@ body{
 
 .slides {
     float: left;
+    position: relative;
     height: 436px;
     width: 804px;
     overflow-y: scroll;
     background-color: white;
+}
+
+.beskrivnings-div, .meddelande-div {
+    float: left;
+    width: 787px;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #727272;
+}
+
+.meddelande-text {
+    margin: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
 }
 
 .description {
@@ -433,7 +449,7 @@ body{
     background-color: #3e8e41;
 }
 
-#new-message {
+.new-message {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -450,8 +466,84 @@ body{
     color: #FFFFFF;
 }
 
-#new-message:hover {
+.new-message:hover {
     background-color: #3e8e41;
+}
+
+.message-box {
+    position: absolute;
+    width: 500px;
+    height: 250px;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+
+#message-box-header {
+    float: left;
+    width: 500px;
+    height: 30px;
+    background-color: #3F51B5;
+    margin-bottom: 0;
+}
+
+#message-box-header-text {
+    float: left;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    font-size: 17px;
+    margin-left: 5px;
+    /*line-height: 30px;*/
+    margin-bottom: 0px;
+    width: 200px;
+}
+
+.kryss {
+    float: right;
+    height: 30px;
+    width: 30px;
+    background-image: url("/img/images/kryss.svg");
+    background-repeat: no-repeat;
+}
+
+#meddelande-ruta {
+    margin-top: 0;
+    float: left;
+    resize: none;
+    width: 498px;
+    height: 190px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#message-box-footer {
+    float: left;
+    width: 500px;
+    height: 30px;
+    background-color: #3F51B5;
+    margin-bottom: 0;
+}
+
+#send-message {
+    float: left;
+    background-color: #4CAF50;
+    height: 30px;
+    width: 70px;
+}
+
+#send-message-text {
+    color: #EEEEEE;
+}
+
+#attachment-icon {
+    float: left;
+    height: 30px;
+    width: 30px;
+    background-image: url("/img/images/attachment.svg");
+    background-repeat: no-repeat;
+}
+
+#fuling {
+    display: none;
 }
 
 #new-issue-box {
@@ -526,6 +618,7 @@ body{
     width: 500px;
     overflow: hidden;
     margin-left: 50px;
+    margin-right: 0px;
 }
 
 .status-text {
@@ -618,7 +711,14 @@ body{
 .errant-list-item {
     float: left;
     width: 787px;
-    height: 30px;
+    height: 29px;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #424242;
+}
+
+.errant-list-item:hover {
+    background-color: #B6B6B6;
 }
 
 .errant-list-item-text {
@@ -631,17 +731,130 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     height: 30px;
-
+    color: #000000;
 }
 
 #errant-list-item-name {
-    width: 140px;
+    width: 160px;
 }
 
 #errant-list-item-category {
-    width: 100px;
+    width: 120px;
 }
 
 #errant-list-item-user {
-    width: 150px;
+    width: 160px;
+}
+
+#errant-list-item-date {
+    width: 160px;
+}
+
+.issue-info-text {
+    float: left;
+    margin-left: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    height: 40px;
+    line-height: 40px;
+}
+
+#issue-info-text-subject {
+    width: 160px;
+}
+
+#issue-info-text-category {
+    width: 120px;
+}
+
+#issue-info-text-user {
+    width: 160px;
+}
+
+#issue-info-text-created {
+    width: 160px;
+}
+
+#issue-container-header {
+    height: 100px;
+    width: 1070px;
+    background-color: #3F51B5;
+}
+
+#issue-name-displayed {
+    display: block;
+    line-height: 100px;
+    margin-top: 0;
+}
+
+#dialog-ruta {
+    float: left;
+    position: relative;
+    height: 436px;
+    width: 804px;
+    overflow-y: scroll;
+    background-color: white;
+}
+
+#message-box {
+    position: absolute;
+    width: 500px;
+    height: 250px;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+
+#info-ruta {
+    float: left;
+    position: relative;
+    width: 265px;
+    height: 436px;
+    border-right: solid;
+    border-right-width: 1px;
+    border-right-color: #727272;
+}
+
+#user {
+    width: 265px;
+    height: 400px;
+}
+
+#users-text {
+    float: left;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+
+#user-text {
+    float: left;
+    font-size: 17px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.modify-status {
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 265px;
+    height: 85px;
+    background-color: #4CAF50;
+}
+
+.modify-status:hover {
+    background-color: #3e8e41;
+}
+
+#assign-issue-text {
+    text-align: center;
+    font-size: 25px;
+    line-height: 85px;
+    color: #FFFFFF;
 }

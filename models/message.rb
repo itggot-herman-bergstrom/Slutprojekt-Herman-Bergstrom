@@ -7,6 +7,6 @@ class Message
 
   belongs_to :user
   belongs_to :issue
-  has n, :attachments
+  has n, :message_attachments
 
 end
