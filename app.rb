@@ -4,6 +4,12 @@ class App < Sinatra::Base
 
   before do
     @user = User.get session[:user_id] if session[:user_id]
+
+    # no_redirect = ["/", "/login-page", "/issues"]
+    #
+    # if !session[:user_id] && !no_redirect.include?(request.path_info)
+    #   redirect '/login-page'
+    # end
   end
 
   get '/' do
@@ -41,6 +47,7 @@ class App < Sinatra::Base
     @messages = Message.all
     @user
     @issueattachments = IssueAttachment.all
+    @messageattachments = MessageAttachment.all
     erb :issues
   end
 
@@ -96,14 +103,38 @@ class App < Sinatra::Base
     @issue = Issue.first(id: id)
     @users = @issue.users
     @messages = Message.all
+    @issueattachments = IssueAttachment.all
+    @messageattachments = MessageAttachment.all
     erb :issue
   end
 
   post '/send-message' do
 
-    Message.create(message: params["message"],
+    message = Message.create(message: params["message"],
                     user_id: session[:user_id],
                     issue_id: params["id"])
+
+    if params[:attachments] != nil
+      files = params[:attachments]
+      files.each do |file|
+
+        original_name = file[:filename]
+        tmpfile = file[:tempfile]
+
+        # filetype = filename[:type].split('/')[1] #file[:type] always looks like image/*type*
+
+
+        new_name = (0...30).map { ('a'..'z').to_a[rand(26)] }.join #Creates a random string with 30 letters
+
+        extname = File.extname(file[:filename])
+
+        File.open("./public/uploads/#{new_name}.#{extname}", "w+") do |f|
+          f.write(tmpfile.read)
+        end
+
+        MessageAttachment.create(path: "#{new_name}.#{extname}", name: original_name, message_id: message.id)
+      end
+    end
 
     redirect '/'
 

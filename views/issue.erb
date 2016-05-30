@@ -21,9 +21,19 @@
     <% end %>
   </div>
   <div id="dialog-ruta">
-    <div class="beskrivnings-div"><p class="description"><%= @issue.description%></p></div>
+    <div class="beskrivnings-div">
+      <p class="description"><%= @issue.description%></p>
+      <% for attachment in @issueattachments.select{|x| x.issue.id == @issue.id}%>
+          <img class="attachment-picture" src="/uploads/<%= attachment.path %>" alt="">
+      <% end %></div>
     <% for message in @messages.select{|x| x.issue.id == @issue.id}%>
-        <div class="meddelande-div"><p class="meddelande-text" ><%= message.message %></p></div>
+        <div class="meddelande-div">
+          <p class="meddelande-text" ><%= message.message %></p>
+          <% for attachment in @messageattachments.select{|x| x.message.id == message.id}%>
+              <img class="attachment-picture" src="/uploads/<%= attachment.path %>" alt="">
+          <% end %>
+          <p id="nameofuser"><%= message.user.first_name%></p>
+        </div>
     <% end %>
     <% if @issue.status.id == 1%>
       <div class="new-message"><p id="new-message-text">Nytt Meddelande!</p></div>

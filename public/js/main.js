@@ -2,13 +2,17 @@ $(document).ready(function() {
 
     $(".issue").click(function(event) {
         n = $(this).attr("data-target");
-        console.debug(n);
         $(".slides").hide()
         $(".errant-name-text").hide()
         $(".slides:nth(" + n +")").fadeIn("slow")
         $(".errant-name-text:nth(" + n +")").fadeIn("slow");;
 
     });
+
+    $(".close-button").click(function() {
+        $(".slides").hide();
+    });
+
     //function showDivs(n){
     //    var x = document.getElementsByClassName("slides");
     //    for (var i = 0; i < x.length; i++) {

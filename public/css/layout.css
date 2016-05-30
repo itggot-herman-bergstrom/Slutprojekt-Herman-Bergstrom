@@ -8,6 +8,11 @@ body{
     background-color: #EEE;;
 }
 
+.close-button {
+    display: none;
+    z-index: 10;
+}
+
 #header {
     margin-left: auto;
     margin-right: auto;
@@ -72,6 +77,7 @@ body{
 }
 
 .issue-container {
+    position: relative;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
@@ -104,7 +110,7 @@ body{
 
 .slides {
     float: left;
-    position: relative;
+    /*position: relative;*/
     height: 436px;
     width: 804px;
     overflow-y: scroll;
@@ -113,10 +119,17 @@ body{
 
 .beskrivnings-div, .meddelande-div {
     float: left;
+    position: relative;
     width: 787px;
     border-bottom: solid;
     border-width: 1px;
     border-color: #727272;
+}
+
+#nameofuser {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .meddelande-text {
@@ -456,6 +469,7 @@ body{
     width: 265px;
     height: 85px;
     background-color: #4CAF50;
+    z-index: 5;
 }
 
 #new-message-text {
@@ -477,6 +491,7 @@ body{
     bottom: 0;
     right: 0;
     display: none;
+    z-index: 6;
 }
 
 #message-box-header {
@@ -547,6 +562,7 @@ body{
 }
 
 #new-issue-box {
+    position: relative;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
@@ -619,6 +635,24 @@ body{
     overflow: hidden;
     margin-left: 50px;
     margin-right: 0px;
+}
+
+#create-errant-button {
+    position: absolute;
+    bottom: 50px;
+    right: 300px;
+}
+
+#abort-button {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+
+#attachment {
+    position: absolute;
+    bottom: 210px;
+    right: 240px;
 }
 
 .status-text {
@@ -857,4 +891,184 @@ body{
     font-size: 25px;
     line-height: 85px;
     color: #FFFFFF;
+}
+
+.attachment-picture {
+    max-height: 400px;
+    max-width: 400px;
+    margin: 10px;
+}
+
+@media (max-width: 500px) {
+
+    * {
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+        -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+        box-shadow: 0px 8px 0px 0px rgba(0,0,0,0);
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+
+    }
+
+    /*#loggain {*/
+        /*margin-left: 100px;*/
+        /*margin-right: 100px;*/
+    /*}*/
+
+    /*#vanligaproblem {*/
+        /*margin-left: 100px;*/
+        /*margin-right: 100px;*/
+    /*}*/
+
+    /*#start_page_loga {*/
+        /*height: 400px;*/
+        /*width: 400px;*/
+    /*}*/
+
+    /*#name_text {*/
+        /*font-size: 80px;*/
+        /*margin-top: 50px;*/
+    /*}*/
+
+
+
+    #loggain, #vanligaproblem {
+        float: none;
+        margin: 0;
+        width: 100%;
+        border-bottom: solid;
+        border-width: 1px;
+        border-color: #727272;
+    }
+
+    #loggain {
+        margin-top: 50px;
+    }
+
+
+    #login {
+        /*height: 550px;*/
+        /*width: 100%;*/
+        position: relative;
+    }
+
+    #loginrutor {
+        float: none;
+        width: 100%;
+        /*height: 0;*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #usernameinput, #passwordinput {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #loggainknapp, #avbrytknapp {
+        float: none;
+        margin: 0;
+        width: 100%;
+        border-bottom: solid;
+        border-width: 1px;
+        border-color: #727272;
+    }
+
+    #loggainknapp {
+        margin-top: 40px;
+    }
+
+    #headerloga {
+        display: none;
+    }
+
+    #loginstatus {
+        display: none;
+    }
+
+    #nameoferrant {
+        display: none;
+    }
+
+    .issue-container {
+        width: 100%;
+        margin: 0;
+        background-color: #3F51B5;
+    }
+
+    #yourerrants {
+        width: 100%;
+        border: none;
+    }
+
+    #the-issues {
+        width: 100%;
+        border: none;
+    }
+
+    #issueselector {
+        width: 100%;
+    }
+
+    .issue {
+        width: 100%;
+    }
+
+    #new-issue {
+        width: 100%;
+    }
+
+    #issues, #knowledge_base, #loggautknapp {
+        width: 33%;
+        margin: 0;
+    }
+
+    #header {
+        width: 100%;
+    }
+
+    .slides, .beskrivnings-div, .meddelande-div {
+        width: 100%;
+    }
+
+    .attachment-picture {
+        max-width: 90%;
+    }
+
+    .close-button {
+        display: block;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        background-image: url("/img/images/kryss.svg");
+    }
+
+    .slides {
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        height: 536px;
+    }
+
+    .new-message {
+        width: 100%;
+        float: left;
+        position: relative;
+    }
+
+    .message-box {
+        width: 100%;
+        position: relative;
+    }
+
+    #message-box-header, #message-box-footer, #meddelande-ruta {
+        width: 100%;
+    }
+
 }

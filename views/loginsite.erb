@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="/css/layout.css" type="text/css"/>
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -14,12 +15,14 @@
   <div id="start_page_loga"></div>
   <div><p id="name_text">Ärendehantering</p></div>
   <div id="login">
-    <form action="/login" method="post">
-      <div id="loginrutor" class="mdl-textfield mdl-js-textfield">
+    <form action="/login" method="post" id="login-form" >
+      <div id="loginrutor">
         <input name="mail" type="text" placeholder="email" id="usernameinput" class="mdl-textfield__input">
         <input name="password" type="password" placeholder="password" id="passwordinput" class="mdl-textfield__input">
       </div>
-      <button type="submit" id="loggainknapp"><p id="loggain_text">Logga In</p></button>
+      <button type="submit" id="loggainknapp">
+        <p id="loggain_text">Logga In</p>
+      </button>
     </form>
     <a href="/"><div id="avbrytknapp"><p id="loggain_text">Avbryt</p></div></a>
   </div>
