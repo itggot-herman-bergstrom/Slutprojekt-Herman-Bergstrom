@@ -14,14 +14,14 @@
       </select>
     </div>
     <div id="description-div">
-        <p class="create-issue-text">Beskrivning:</p>
+        <p id="description-text" class="create-issue-text">Beskrivning:</p>
       <div class="mdl-textfield mdl-js-textfield" id="beskrivnings-container">
         <textarea name="description" class="mdl-textfield__input" type="text" rows= "3" id="beskrivnings-ruta" ></textarea>
-        <label class="mdl-textfield__label" for="sample5">Beskrivning...</label>
+        <label id="placeholder" class="mdl-textfield__label" for="sample5">Beskrivning...</label>
       </div>
-      <button type="submit" class="button" id="create-errant-button"><p class="button-text">Skapa Ärende</p></button>
     </div>
-    <div id="attachment"><input type="file" name="attachments[]" multiple></div>
+    <div id="attachment"><input id="attachment-button" type="file" name="attachments[]" multiple></div>
+    <button type="submit" class="button" id="create-errant-button"><p class="button-text">Skapa Ärende</p></button>
   </form>
   <a href="/issues"><div class="button" id="abort-button"><p class="button-text">Avbryt</p></div></a>
 </div>

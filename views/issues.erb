@@ -108,47 +108,68 @@
           </select>
         </div>
       </div>
-      <div id="issue-info">
-        <p class="issue-info-text" id="issue-info-text-subject">Ämne:</p>
-        <p class="issue-info-text" id="issue-info-text-category">Kategori:</p>
-        <p class="issue-info-text" id="issue-info-text-user">Användare:</p>
-        <p class="issue-info-text" id="issue-info-text-created">Skapad:</p>
+      <div class="almost-slide">
+        <div class="close-button"></div>
+        <div class="issue-info">
+          <p class="issue-info-text" id="issue-info-text-subject">Ämne:</p>
+          <p class="issue-info-text" id="issue-info-text-category">Kategori:</p>
+          <p class="issue-info-text" id="issue-info-text-user">Användare:</p>
+          <p class="issue-info-text" id="issue-info-text-created">Skapad:</p>
+        </div>
+        <div class="errant-list">
+         <% for issue in @allissues.select{|x| x.status.id == 1} %>
+              <% if issue.users.include? @user %>
+              <a href="/issue/<%= issue.id %>"><div class="errant-list-item">
+            <p class="errant-list-item-text" id="errant-list-item-name"><%= issue.name %></p>
+            <p class="errant-list-item-text" id="errant-list-item-category"><%= issue.category.name%></p>
+            <p class="errant-list-item-text" id="errant-list-item-user"><%= issue.users[0].first_name %> <%= issue.users[0].last_name%></p>
+            <!--<p class="errant-list-item-text" id="errant-list-item-date"><#%= issue.date%></p>-->
+          </div></a>
+              <% end %>
+          <% end %>
+        </div>
       </div>
-      <div class="errant-list">
-       <% for issue in @allissues.select{|x| x.status.id == 1} %>
-            <% if issue.users.include? @user %>
-            <a href="/issue/<%= issue.id %>"><div class="errant-list-item">
-          <p class="errant-list-item-text" id="errant-list-item-name"><%= issue.name %></p>
-          <p class="errant-list-item-text" id="errant-list-item-category"><%= issue.category.name%></p>
-          <p class="errant-list-item-text" id="errant-list-item-user"><%= issue.users[0].first_name %> <%= issue.users[0].last_name%></p>
-          <!--<p class="errant-list-item-text" id="errant-list-item-date"><#%= issue.date%></p>-->
-        </div></a>
-            <% end %>
-        <% end %>
+      <div class="almost-slide">
+        <div class="close-button"></div>
+        <div class="issue-info">
+          <p class="issue-info-text" id="issue-info-text-subject">Ämne:</p>
+          <p class="issue-info-text" id="issue-info-text-category">Kategori:</p>
+          <p class="issue-info-text" id="issue-info-text-user">Användare:</p>
+          <p class="issue-info-text" id="issue-info-text-created">Skapad:</p>
+        </div>
+        <div class="errant-list">
+          <% for issue in @allissues.select{|x| x.status.id == 2} %>
+              <% if issue.users.include? @user %>
+              <a href="/issue/<%= issue.id %>">
+                <div class="errant-list-item">
+                  <p class="errant-list-item-text" id="errant-list-item-name"><%= issue.name %></p>
+                  <p class="errant-list-item-text" id="errant-list-item-category"><%= issue.category.name%></p>
+                  <p class="errant-list-item-text" id="errant-list-item-user"><%= issue.users[0].first_name %> <%= issue.users[0].last_name%></p>
+                  <!--<p class="errant-list-item-text" id="errant-list-item-date"><#%= issue.date%></p>-->
+                </div>
+              </a>
+              <%  end %>
+          <% end %>
+        </div>
       </div>
-      <div class="errant-list">
-        <% for issue in @allissues.select{|x| x.status.id == 2} %>
-            <% if issue.users.include? @user %>
-            <a href="/issue/<%= issue.id %>">
-              <div class="errant-list-item">
+      <div class="almost-slide">
+        <div class="close-button"></div>
+        <div class="issue-info">
+          <p class="issue-info-text" id="issue-info-text-subject">Ämne:</p>
+          <p class="issue-info-text" id="issue-info-text-category">Kategori:</p>
+          <p class="issue-info-text" id="issue-info-text-user">Användare:</p>
+          <p class="issue-info-text" id="issue-info-text-created">Skapad:</p>
+        </div>
+        <div class="errant-list">
+          <% for issue in @allissues.select{|x| x.status.id == 3} %>
+              <a href="/issue/<%= issue.id %>"><div class="errant-list-item">
                 <p class="errant-list-item-text" id="errant-list-item-name"><%= issue.name %></p>
                 <p class="errant-list-item-text" id="errant-list-item-category"><%= issue.category.name%></p>
                 <p class="errant-list-item-text" id="errant-list-item-user"><%= issue.users[0].first_name %> <%= issue.users[0].last_name%></p>
                 <!--<p class="errant-list-item-text" id="errant-list-item-date"><#%= issue.date%></p>-->
-              </div>
-            </a>
-            <%  end %>
-        <% end %>
-      </div>
-      <div class="errant-list">
-        <% for issue in @allissues.select{|x| x.status.id == 3} %>
-            <a href="/issue/<%= issue.id %>"><div class="errant-list-item">
-              <p class="errant-list-item-text" id="errant-list-item-name"><%= issue.name %></p>
-              <p class="errant-list-item-text" id="errant-list-item-category"><%= issue.category.name%></p>
-              <p class="errant-list-item-text" id="errant-list-item-user"><%= issue.users[0].first_name %> <%= issue.users[0].last_name%></p>
-              <!--<p class="errant-list-item-text" id="errant-list-item-date"><#%= issue.date%></p>-->
-            </div></a>
-        <% end %>
+              </div></a>
+          <% end %>
+        </div>
       </div>
 <% end %>
 </div>

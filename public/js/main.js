@@ -11,6 +11,7 @@ $(document).ready(function() {
 
     $(".close-button").click(function() {
         $(".slides").hide();
+        $(".almost-slide").hide();
     });
 
     //function showDivs(n){
@@ -39,7 +40,7 @@ $(document).ready(function() {
 });
 
 function showDivs(n){
-    var x = document.getElementsByClassName("errant-list");
+    var x = document.getElementsByClassName("almost-slide");
     for (var i = 0; i < x.length; i++) {
         x[i].style.display = "none";
     }
@@ -65,7 +66,7 @@ function listeners(){
     });
 }
 function hideAllDivs(){
-    var x = document.getElementsByClassName("errant-list");
+    var x = document.getElementsByClassName("almost-slide");
     for (var i = 0; i < x.length; i++) {
         x[i].style.display = "none";
     }

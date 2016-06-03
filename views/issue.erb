@@ -36,7 +36,6 @@
         </div>
     <% end %>
     <% if @issue.status.id == 1%>
-      <div class="new-message"><p id="new-message-text">Nytt Meddelande!</p></div>
       <div id="message-box">
         <div id="message-box-header">
           <p id="message-box-header-text">New Message</p>
@@ -55,6 +54,7 @@
           <textarea name="id" id="fuling" cols="30" rows="10"><%= @issue.id %></textarea>
         </form>
       </div>
+        <div class="new-message"><p id="new-message-text">Nytt Meddelande!</p></div>
     <% end %>
 
   </div>

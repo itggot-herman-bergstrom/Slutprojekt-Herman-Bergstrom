@@ -203,6 +203,8 @@ body{
     overflow-y: inherit;
 }
 
+
+
 #start_page_loga {
     margin-left: auto;
     margin-right: auto;
@@ -718,6 +720,12 @@ body{
     width: 120px;
 }
 
+.almost-slide{
+    float: left;
+    height: 436px;
+    width: 804px;
+}
+
 .errant-list {
     float: left;
     height: 396px;
@@ -733,7 +741,7 @@ body{
     color: #FFFFFF;
 }
 
-#issue-info {
+.issue-info {
     float: left;
     height: 39px;
     width: 804px;
@@ -1043,9 +1051,9 @@ body{
         display: block;
         height: 20px;
         width: 20px;
-        position: absolute;
-        top: 5px;
-        left: 5px;
+        float: left;
+        margin-left: 5px;
+        margin-top: 5px;
         background-image: url("/img/images/kryss.svg");
     }
 
@@ -1070,5 +1078,158 @@ body{
     #message-box-header, #message-box-footer, #meddelande-ruta {
         width: 100%;
     }
+
+    #headerthingy, #new-issue-box {
+        width: 100%;
+    }
+
+    #new-issue-box {
+        height: 800px;
+        margin: 0;
+    }
+
+    #attachment {
+        position: inherit;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+    }
+
+    #attachment-button {
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+    }
+
+    #description-div {
+        float: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #subject {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #kategori {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+    }
+
+    #description-div{
+        width: 100%;
+        float: none;
+    }
+
+    #description-text{
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #beskrivnings-container{
+        width: 80%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #beskrivnings-ruta{
+        width: 80%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    #placeholder {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+
+    #create-errant-button {
+        width: 100%;
+        position: inherit;
+        margin-top: 20px;
+    }
+
+    #abort-button {
+        width: 100%;
+        position: inherit;
+    }
+
+    .problem_container {
+        float: none;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #the-issues, .issue-sorter {
+        width: 100%;
+    }
+
+    #kategori-admins {
+        display: none;
+    }
+
+    .errant-list {
+        width: 100%;
+    }
+
+    .errant-list-item {
+        width: 100%;
+    }
+
+    #errant-list-item-name {
+        display: none;
+    }
+
+    .issue-info {
+        width: 100%;
+    }
+
+    #issue-info-text-user, #issue-info-text-created {
+        display: none;
+    }
+
+    .almost-slide {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 20;
+        background-color: #EEEEEE;
+        height: 536px;
+    }
+
+    #issue-container-header {
+        width: 100%;
+    }
+
+    #dialog-ruta {
+        width: 100%;
+    }
+
+    #message-box {
+        width: 100%;
+        z-index: 10;
+        position: inherit;
+    }
+
+    .modify-status {
+        width: 100%;
+    }
+
+    #info-ruta {
+        width: 100%;
+        background-color: #EEEEEE;
+    }
+
+
 
 }
