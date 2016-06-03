@@ -1186,7 +1186,7 @@ body{
         width: 100%;
     }
 
-    #errant-list-item-name {
+    #errant-list-item-category {
         display: none;
     }
 
@@ -1194,7 +1194,7 @@ body{
         width: 100%;
     }
 
-    #issue-info-text-user, #issue-info-text-created {
+    #issue-info-text-category, #issue-info-text-created {
         display: none;
     }
 

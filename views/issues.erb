@@ -29,7 +29,7 @@
   </div>
   <div id="the-issues">
   <div id="issueselector">
-    <p class="status-text">Active()</p>
+    <p class="status-text">Active</p>
     <% for issue in @issues.select{|x| x.status.id == 1} %>
       <div class="issue" data-target="<%= issue.id - 1 %>">
         <p id="issuetext"><%= issue.name %></p>
