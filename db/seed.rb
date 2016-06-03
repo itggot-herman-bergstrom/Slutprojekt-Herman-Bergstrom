@@ -4,9 +4,6 @@ class Seeder
       roles
       users
       categories
-      issues
-      messages
-      user_issues
       knowledge_base_articles
       status
   end
@@ -23,48 +20,26 @@ class Seeder
     Status.create(name: :unaddressed)
   end
 
-  def self.user_issues
-    UserIssue.create(user_id: 1,
-                      issue_id: 1)
-    UserIssue.create(user_id: 1,
-                     issue_id: 2)
-  end
 
   def self.users
-     User.create(first_name: 'Herman',
-                  last_name: 'Bergstrom',
-                  mail: 'herman.bergstrom@itggot.se',
-                  password:'SwagVictor',
+     User.create(first_name: 'Daniel',
+                  last_name: 'Berg',
+                  mail: 'daniel',
+                  password:'swag',
                   role_id: 1)
 
       User.create(first_name: 'Kristian',
-                  last_name: 'Quickscoper',
-                  mail: 'kristian@gmail.com',
-                  password: 'password123',
+                  last_name: 'Lol',
+                  mail: 'mail',
+                  password: 'password',
                   role_id: 2)
 
   end
 
   def self.categories
-      Category.create(name: 'Datorproblem')
-  end
-
-  def self.issues
-      Issue.create(name: 'Datorn startar inte',
-                   description: 'Min dator fungerar icke',
-                   category_id: 1,
-                    status_id: 1,)
-
-      Issue.create(name: 'Blåskärm',
-                   description: 'Min har en jäkla blåskärm',
-                   category_id: 1,
-                    status_id: 2)
-  end
-
-  def self.messages
-      Message.create(message: 'Lorem ipsum spiritus whatever this message is just created to try out the new function.',
-                     user_id: 1,
-                     issue_id: 1 )
+      Category.create(name: 'Datorproblem'
+      Category.create(name: 'Stöld')
+      Category.create(name: 'Virus')
   end
 
   def self.knowledge_base_articles
@@ -74,6 +49,11 @@ class Seeder
                                   user_id: 1)
 
       KnowledgeBaseArticle.create(title: 'Blå skärm',
+                                  content: 'This is something',
+                                  category_id: 1,
+                                  user_id: 1)
+
+      KnowledgeBaseArticle.create(title: 'Det går inte att klicka på alternativen :(',
                                   content: 'This is something',
                                   category_id: 1,
                                   user_id: 1)
